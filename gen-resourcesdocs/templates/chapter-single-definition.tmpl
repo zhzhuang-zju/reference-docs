@@ -10,16 +10,12 @@ weight: {{.Metadata.Weight}}
 auto_generated: true
 ---
 
-<!--
-The file is auto-generated from the Go source code of the component using a generic
-[generator](https://github.com/kubernetes-sigs/reference-docs/). To learn how
-to generate the reference documentation, please read
-[Contributing to the reference documentation](/docs/contribute/generate-ref-docs/).
-To update the reference content, please follow the 
-[Contributing upstream](/docs/contribute/generate-ref-docs/contribute-upstream/)
-guide. You can file document formatting bugs against the
-[reference-docs](https://github.com/kubernetes-sigs/reference-docs/) project.
--->
+[//]: # (The file is auto-generated from the Go source code of the component using a generic)
+[//]: # ([generator]&#40;https://github.com/kubernetes-sigs/reference-docs/&#41;. To learn how)
+[//]: # (to generate the reference documentation, please read)
+[//]: # (To update the reference content, please follow the)
+[//]: # (guide. You can file document formatting bugs against the)
+[//]: # ([reference-docs]&#40;https://github.com/kubernetes-sigs/reference-docs/&#41; project.)
 
 {{if .ApiVersion}}`apiVersion: {{.ApiVersion}}`{{end}}
 
@@ -28,7 +24,7 @@ guide. You can file document formatting bugs against the
 {{range .Sections}}
 {{.Description | replace "<" "\\<" }}
 
-<hr>
+<hr/>
 {{range .Fields}}
 {{ ""  | indent .Indent | indent .Indent}}- {{.Name}}{{if .Value}}: {{.Value}}{{end}}
 {{if .Description}}
@@ -36,12 +32,13 @@ guide. You can file document formatting bugs against the
 {{- end}}
 {{if .TypeDefinition}}
 {{ ""  | indent .Indent | indent .Indent}}  <a name="{{.Type}}"></a>
+
 {{.TypeDefinition | indent 2 | indent .Indent | indent .Indent}}
 {{end}}
 {{- end}}{{/* range .Fields */}}
 
 {{range .FieldCategories}}
-### {{.Name}} {#{{"-" | regexReplaceAll "[^a-zA-Z0-9]+" .Name }}}{{/* explicitly set fragment to keep capitalization */}}
+### {{.Name}} {{/* explicitly set fragment to keep capitalization */}}
 
 {{range .Fields}}
 {{ ""  | indent .Indent | indent .Indent}}- {{.Name}}{{if .Value}}: {{.Value}}{{end}}
@@ -50,6 +47,7 @@ guide. You can file document formatting bugs against the
 {{- end}}
 {{if .TypeDefinition}}
 {{ ""  | indent .Indent | indent .Indent}}  <a name="{{.Type}}"></a>
+
 {{.TypeDefinition | indent 2 | indent .Indent | indent .Indent}}
 {{end}}
 {{- end}}{{/* range .Fields */}}
