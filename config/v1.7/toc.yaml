@@ -14,14 +14,14 @@
 # limitations under the License.
 
 parts:
-  #- name: AutoScaling Resources
-  #  chapters:
-  #    - name: FederatedHPA
-  #      group: "autoscaling.karmada.io"
-  #      version: v1alpha1
-  #    - name: CronFederatedHPA
-  #      group: "autoscaling.karmada.io"
-  #      version: v1alpha1
+  - name: AutoScaling Resources
+    chapters:
+      - name: FederatedHPA
+        group: "autoscaling.karmada.io"
+        version: v1alpha1
+      - name: CronFederatedHPA
+        group: "autoscaling.karmada.io"
+        version: v1alpha1
   - name: Cluster Resources
     chapters:
       - name: Cluster
@@ -29,9 +29,9 @@ parts:
         version: v1alpha1
   - name: Config Resources
     chapters:
-      #  - name: ResourceInterpreterCustomization
-      #    group: "config.karmada.io"
-      #    version: v1alpha1
+      - name: ResourceInterpreterCustomization
+        group: "config.karmada.io"
+        version: v1alpha1
       - name: ResourceInterpreterWebhookConfiguration
         group: "config.karmada.io"
         version: v1alpha1
