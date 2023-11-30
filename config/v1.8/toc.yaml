@@ -1,0 +1,103 @@
+# Copyright 2016 The Kubernetes Authors.
+# Copyright 2020 Philippe Martin
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#     http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+parts:
+  - name: AutoScaling Resources
+    chapters:
+      - name: FederatedHPA
+        group: "autoscaling.karmada.io"
+        version: v1alpha1
+      - name: CronFederatedHPA
+        group: "autoscaling.karmada.io"
+        version: v1alpha1
+  - name: Cluster Resources
+    chapters:
+      - name: Cluster
+        group: "cluster.karmada.io"
+        version: v1alpha1
+  - name: Config Resources
+    chapters:
+      - name: ResourceInterpreterCustomization
+        group: "config.karmada.io"
+        version: v1alpha1
+      - name: ResourceInterpreterWebhookConfiguration
+        group: "config.karmada.io"
+        version: v1alpha1
+  - name: Networking Resources
+    chapters:
+      - name: MultiClusterIngress
+        group: "networking.karmada.io"
+        version: v1alpha1
+      - name: MultiClusterService
+        group: "networking.karmada.io"
+        version: v1alpha1
+  - name: Policy Resources
+    chapters:
+      - name: FederatedResourceQuota
+        group: "policy.karmada.io"
+        version: v1alpha1
+      - name: OverridePolicy
+        group: "policy.karmada.io"
+        version: v1alpha1
+      - name: ClusterOverridePolicy
+        group: "policy.karmada.io"
+        version: v1alpha1
+      - name: PropagationPolicy
+        group: "policy.karmada.io"
+        version: v1alpha1
+      - name: ClusterPropagationPolicy
+        group: "policy.karmada.io"
+        version: v1alpha1
+  - name: Search Resources
+    chapters:
+      - name: ResourceRegistry
+        group: "search.karmada.io"
+        version: v1alpha1
+  - name: Work Resources
+    chapters:
+      - name: Work
+        group: "work.karmada.io"
+        version: v1alpha1
+      - name: ResourceBinding
+        group: "work.karmada.io"
+        version: v1alpha2
+      - name: ClusterResourceBinding
+        group: "work.karmada.io"
+        version: v1alpha2
+  - name: Common Definitions
+    chapters:
+      - name: DeleteOptions
+        key: io.k8s.apimachinery.pkg.apis.meta.v1.DeleteOptions
+      - name: LabelSelector
+        key: io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelector
+      - name: ListMeta
+        key: io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta
+      - name: NodeSelectorRequirement
+        key: io.k8s.api.core.v1.NodeSelectorRequirement
+      - name: ObjectMeta
+        key: io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta
+      - name: Patch
+        key: io.k8s.apimachinery.pkg.apis.meta.v1.Patch
+      - name: Quantity
+        key: io.k8s.apimachinery.pkg.api.resource.Quantity
+      - name: Status
+        key: io.k8s.apimachinery.pkg.apis.meta.v1.Status
+      - name: TypedLocalObjectReference
+        key: io.k8s.api.core.v1.TypedLocalObjectReference
+skippedResources:
+  - APIGroup
+  - APIGroupList
+  - APIResourceList
+  - APIVersions
