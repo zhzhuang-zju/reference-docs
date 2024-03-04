@@ -1,4 +1,4 @@
-VERSION ?= v1.8
+VERSION ?= current
 SWAGGER_FILE = "api/$(VERSION)/swagger.json"
 
 all: kwebsite
