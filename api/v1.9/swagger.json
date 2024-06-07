@@ -40,852 +40,6 @@
         }
       }
     },
-    "/apis/apps.karmada.io/": {
-      "get": {
-        "description": "get information of a group",
-        "consumes": [
-          "application/json",
-          "application/yaml",
-          "application/vnd.kubernetes.protobuf"
-        ],
-        "produces": [
-          "application/json",
-          "application/yaml",
-          "application/vnd.kubernetes.protobuf"
-        ],
-        "schemes": [
-          "https"
-        ],
-        "tags": [
-          "appsKarmadaIo"
-        ],
-        "operationId": "getAppsKarmadaIoAPIGroup",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIGroup"
-            }
-          }
-        }
-      }
-    },
-    "/apis/apps.karmada.io/v1alpha1/": {
-      "get": {
-        "description": "get available resources",
-        "consumes": [
-          "application/json",
-          "application/yaml",
-          "application/vnd.kubernetes.protobuf"
-        ],
-        "produces": [
-          "application/json",
-          "application/yaml",
-          "application/vnd.kubernetes.protobuf"
-        ],
-        "schemes": [
-          "https"
-        ],
-        "tags": [
-          "appsKarmadaIo_v1alpha1"
-        ],
-        "operationId": "getAppsKarmadaIoV1alpha1APIResources",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIResourceList"
-            }
-          }
-        }
-      }
-    },
-    "/apis/apps.karmada.io/v1alpha1/watch/workloadrebalancers": {
-      "get": {
-        "description": "watch individual changes to a list of WorkloadRebalancer. deprecated: use the 'watch' parameter with a list operation instead.",
-        "consumes": [
-          "*/*"
-        ],
-        "produces": [
-          "application/json",
-          "application/yaml",
-          "application/vnd.kubernetes.protobuf",
-          "application/json;stream=watch",
-          "application/vnd.kubernetes.protobuf;stream=watch"
-        ],
-        "schemes": [
-          "https"
-        ],
-        "tags": [
-          "appsKarmadaIo_v1alpha1"
-        ],
-        "operationId": "watchAppsKarmadaIoV1alpha1WorkloadRebalancerList",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.WatchEvent"
-            }
-          }
-        },
-        "x-kubernetes-action": "watchlist",
-        "x-kubernetes-group-version-kind": {
-          "group": "apps.karmada.io",
-          "version": "v1alpha1",
-          "kind": "WorkloadRebalancer"
-        }
-      },
-      "parameters": [
-        {
-          "$ref": "#/parameters/allowWatchBookmarks-HC2hJt-J"
-        },
-        {
-          "$ref": "#/parameters/continue-QfD61s0i"
-        },
-        {
-          "$ref": "#/parameters/fieldSelector-xIcQKXFG"
-        },
-        {
-          "$ref": "#/parameters/labelSelector-5Zw57w4C"
-        },
-        {
-          "$ref": "#/parameters/limit-1NfNmdNH"
-        },
-        {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
-        },
-        {
-          "$ref": "#/parameters/resourceVersion-5WAnf1kx"
-        },
-        {
-          "$ref": "#/parameters/resourceVersionMatch-t8XhRHeC"
-        },
-        {
-          "$ref": "#/parameters/sendInitialEvents-rLXlEK_k"
-        },
-        {
-          "$ref": "#/parameters/timeoutSeconds-yvYezaOC"
-        },
-        {
-          "$ref": "#/parameters/watch-XNNPZGbK"
-        }
-      ]
-    },
-    "/apis/apps.karmada.io/v1alpha1/watch/workloadrebalancers/{name}": {
-      "get": {
-        "description": "watch changes to an object of kind WorkloadRebalancer. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.",
-        "consumes": [
-          "*/*"
-        ],
-        "produces": [
-          "application/json",
-          "application/yaml",
-          "application/vnd.kubernetes.protobuf",
-          "application/json;stream=watch",
-          "application/vnd.kubernetes.protobuf;stream=watch"
-        ],
-        "schemes": [
-          "https"
-        ],
-        "tags": [
-          "appsKarmadaIo_v1alpha1"
-        ],
-        "operationId": "watchAppsKarmadaIoV1alpha1WorkloadRebalancer",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.WatchEvent"
-            }
-          }
-        },
-        "x-kubernetes-action": "watch",
-        "x-kubernetes-group-version-kind": {
-          "group": "apps.karmada.io",
-          "version": "v1alpha1",
-          "kind": "WorkloadRebalancer"
-        }
-      },
-      "parameters": [
-        {
-          "$ref": "#/parameters/allowWatchBookmarks-HC2hJt-J"
-        },
-        {
-          "$ref": "#/parameters/continue-QfD61s0i"
-        },
-        {
-          "$ref": "#/parameters/fieldSelector-xIcQKXFG"
-        },
-        {
-          "$ref": "#/parameters/labelSelector-5Zw57w4C"
-        },
-        {
-          "$ref": "#/parameters/limit-1NfNmdNH"
-        },
-        {
-          "uniqueItems": true,
-          "type": "string",
-          "description": "name of the WorkloadRebalancer",
-          "name": "name",
-          "in": "path",
-          "required": true
-        },
-        {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
-        },
-        {
-          "$ref": "#/parameters/resourceVersion-5WAnf1kx"
-        },
-        {
-          "$ref": "#/parameters/resourceVersionMatch-t8XhRHeC"
-        },
-        {
-          "$ref": "#/parameters/sendInitialEvents-rLXlEK_k"
-        },
-        {
-          "$ref": "#/parameters/timeoutSeconds-yvYezaOC"
-        },
-        {
-          "$ref": "#/parameters/watch-XNNPZGbK"
-        }
-      ]
-    },
-    "/apis/apps.karmada.io/v1alpha1/workloadrebalancers": {
-      "get": {
-        "description": "list or watch objects of kind WorkloadRebalancer",
-        "consumes": [
-          "*/*"
-        ],
-        "produces": [
-          "application/json",
-          "application/yaml",
-          "application/vnd.kubernetes.protobuf",
-          "application/json;stream=watch",
-          "application/vnd.kubernetes.protobuf;stream=watch"
-        ],
-        "schemes": [
-          "https"
-        ],
-        "tags": [
-          "appsKarmadaIo_v1alpha1"
-        ],
-        "operationId": "listAppsKarmadaIoV1alpha1WorkloadRebalancer",
-        "parameters": [
-          {
-            "$ref": "#/parameters/allowWatchBookmarks-HC2hJt-J"
-          },
-          {
-            "$ref": "#/parameters/continue-QfD61s0i"
-          },
-          {
-            "$ref": "#/parameters/fieldSelector-xIcQKXFG"
-          },
-          {
-            "$ref": "#/parameters/labelSelector-5Zw57w4C"
-          },
-          {
-            "$ref": "#/parameters/limit-1NfNmdNH"
-          },
-          {
-            "$ref": "#/parameters/resourceVersion-5WAnf1kx"
-          },
-          {
-            "$ref": "#/parameters/resourceVersionMatch-t8XhRHeC"
-          },
-          {
-            "$ref": "#/parameters/sendInitialEvents-rLXlEK_k"
-          },
-          {
-            "$ref": "#/parameters/timeoutSeconds-yvYezaOC"
-          },
-          {
-            "$ref": "#/parameters/watch-XNNPZGbK"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancerList"
-            }
-          }
-        },
-        "x-kubernetes-action": "list",
-        "x-kubernetes-group-version-kind": {
-          "group": "apps.karmada.io",
-          "version": "v1alpha1",
-          "kind": "WorkloadRebalancer"
-        }
-      },
-      "post": {
-        "description": "create a WorkloadRebalancer",
-        "consumes": [
-          "*/*"
-        ],
-        "produces": [
-          "application/json",
-          "application/yaml",
-          "application/vnd.kubernetes.protobuf"
-        ],
-        "schemes": [
-          "https"
-        ],
-        "tags": [
-          "appsKarmadaIo_v1alpha1"
-        ],
-        "operationId": "createAppsKarmadaIoV1alpha1WorkloadRebalancer",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-            }
-          },
-          {
-            "uniqueItems": true,
-            "type": "string",
-            "description": "When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed",
-            "name": "dryRun",
-            "in": "query"
-          },
-          {
-            "$ref": "#/parameters/fieldManager-Qy4HdaTW"
-          },
-          {
-            "uniqueItems": true,
-            "type": "string",
-            "description": "fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered.",
-            "name": "fieldValidation",
-            "in": "query"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-            }
-          },
-          "201": {
-            "description": "Created",
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-            }
-          },
-          "202": {
-            "description": "Accepted",
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-            }
-          }
-        },
-        "x-kubernetes-action": "post",
-        "x-kubernetes-group-version-kind": {
-          "group": "apps.karmada.io",
-          "version": "v1alpha1",
-          "kind": "WorkloadRebalancer"
-        }
-      },
-      "delete": {
-        "description": "delete collection of WorkloadRebalancer",
-        "consumes": [
-          "*/*"
-        ],
-        "produces": [
-          "application/json",
-          "application/yaml",
-          "application/vnd.kubernetes.protobuf"
-        ],
-        "schemes": [
-          "https"
-        ],
-        "tags": [
-          "appsKarmadaIo_v1alpha1"
-        ],
-        "operationId": "deleteAppsKarmadaIoV1alpha1CollectionWorkloadRebalancer",
-        "parameters": [
-          {
-            "$ref": "#/parameters/body-2Y1dVQaQ"
-          },
-          {
-            "$ref": "#/parameters/continue-QfD61s0i"
-          },
-          {
-            "uniqueItems": true,
-            "type": "string",
-            "description": "When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed",
-            "name": "dryRun",
-            "in": "query"
-          },
-          {
-            "$ref": "#/parameters/fieldSelector-xIcQKXFG"
-          },
-          {
-            "$ref": "#/parameters/gracePeriodSeconds--K5HaBOS"
-          },
-          {
-            "$ref": "#/parameters/labelSelector-5Zw57w4C"
-          },
-          {
-            "$ref": "#/parameters/limit-1NfNmdNH"
-          },
-          {
-            "$ref": "#/parameters/orphanDependents-uRB25kX5"
-          },
-          {
-            "$ref": "#/parameters/propagationPolicy-6jk3prlO"
-          },
-          {
-            "$ref": "#/parameters/resourceVersion-5WAnf1kx"
-          },
-          {
-            "$ref": "#/parameters/resourceVersionMatch-t8XhRHeC"
-          },
-          {
-            "$ref": "#/parameters/sendInitialEvents-rLXlEK_k"
-          },
-          {
-            "$ref": "#/parameters/timeoutSeconds-yvYezaOC"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Status"
-            }
-          }
-        },
-        "x-kubernetes-action": "deletecollection",
-        "x-kubernetes-group-version-kind": {
-          "group": "apps.karmada.io",
-          "version": "v1alpha1",
-          "kind": "WorkloadRebalancer"
-        }
-      },
-      "parameters": [
-        {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
-        }
-      ]
-    },
-    "/apis/apps.karmada.io/v1alpha1/workloadrebalancers/{name}": {
-      "get": {
-        "description": "read the specified WorkloadRebalancer",
-        "consumes": [
-          "*/*"
-        ],
-        "produces": [
-          "application/json",
-          "application/yaml",
-          "application/vnd.kubernetes.protobuf"
-        ],
-        "schemes": [
-          "https"
-        ],
-        "tags": [
-          "appsKarmadaIo_v1alpha1"
-        ],
-        "operationId": "readAppsKarmadaIoV1alpha1WorkloadRebalancer",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-            }
-          }
-        },
-        "x-kubernetes-action": "get",
-        "x-kubernetes-group-version-kind": {
-          "group": "apps.karmada.io",
-          "version": "v1alpha1",
-          "kind": "WorkloadRebalancer"
-        }
-      },
-      "put": {
-        "description": "replace the specified WorkloadRebalancer",
-        "consumes": [
-          "*/*"
-        ],
-        "produces": [
-          "application/json",
-          "application/yaml",
-          "application/vnd.kubernetes.protobuf"
-        ],
-        "schemes": [
-          "https"
-        ],
-        "tags": [
-          "appsKarmadaIo_v1alpha1"
-        ],
-        "operationId": "replaceAppsKarmadaIoV1alpha1WorkloadRebalancer",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-            }
-          },
-          {
-            "uniqueItems": true,
-            "type": "string",
-            "description": "When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed",
-            "name": "dryRun",
-            "in": "query"
-          },
-          {
-            "$ref": "#/parameters/fieldManager-Qy4HdaTW"
-          },
-          {
-            "uniqueItems": true,
-            "type": "string",
-            "description": "fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered.",
-            "name": "fieldValidation",
-            "in": "query"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-            }
-          },
-          "201": {
-            "description": "Created",
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-            }
-          }
-        },
-        "x-kubernetes-action": "put",
-        "x-kubernetes-group-version-kind": {
-          "group": "apps.karmada.io",
-          "version": "v1alpha1",
-          "kind": "WorkloadRebalancer"
-        }
-      },
-      "delete": {
-        "description": "delete a WorkloadRebalancer",
-        "consumes": [
-          "*/*"
-        ],
-        "produces": [
-          "application/json",
-          "application/yaml",
-          "application/vnd.kubernetes.protobuf"
-        ],
-        "schemes": [
-          "https"
-        ],
-        "tags": [
-          "appsKarmadaIo_v1alpha1"
-        ],
-        "operationId": "deleteAppsKarmadaIoV1alpha1WorkloadRebalancer",
-        "parameters": [
-          {
-            "$ref": "#/parameters/body-2Y1dVQaQ"
-          },
-          {
-            "uniqueItems": true,
-            "type": "string",
-            "description": "When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed",
-            "name": "dryRun",
-            "in": "query"
-          },
-          {
-            "$ref": "#/parameters/gracePeriodSeconds--K5HaBOS"
-          },
-          {
-            "$ref": "#/parameters/orphanDependents-uRB25kX5"
-          },
-          {
-            "$ref": "#/parameters/propagationPolicy-6jk3prlO"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Status"
-            }
-          },
-          "202": {
-            "description": "Accepted",
-            "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Status"
-            }
-          }
-        },
-        "x-kubernetes-action": "delete",
-        "x-kubernetes-group-version-kind": {
-          "group": "apps.karmada.io",
-          "version": "v1alpha1",
-          "kind": "WorkloadRebalancer"
-        }
-      },
-      "patch": {
-        "description": "partially update the specified WorkloadRebalancer",
-        "consumes": [
-          "application/json-patch+json",
-          "application/merge-patch+json",
-          "application/strategic-merge-patch+json",
-          "application/apply-patch+yaml"
-        ],
-        "produces": [
-          "application/json",
-          "application/yaml",
-          "application/vnd.kubernetes.protobuf"
-        ],
-        "schemes": [
-          "https"
-        ],
-        "tags": [
-          "appsKarmadaIo_v1alpha1"
-        ],
-        "operationId": "patchAppsKarmadaIoV1alpha1WorkloadRebalancer",
-        "parameters": [
-          {
-            "$ref": "#/parameters/body-78PwaGsr"
-          },
-          {
-            "uniqueItems": true,
-            "type": "string",
-            "description": "When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed",
-            "name": "dryRun",
-            "in": "query"
-          },
-          {
-            "$ref": "#/parameters/fieldManager-7c6nTn1T"
-          },
-          {
-            "uniqueItems": true,
-            "type": "string",
-            "description": "fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered.",
-            "name": "fieldValidation",
-            "in": "query"
-          },
-          {
-            "$ref": "#/parameters/force-tOGGb0Yi"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-            }
-          },
-          "201": {
-            "description": "Created",
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-            }
-          }
-        },
-        "x-kubernetes-action": "patch",
-        "x-kubernetes-group-version-kind": {
-          "group": "apps.karmada.io",
-          "version": "v1alpha1",
-          "kind": "WorkloadRebalancer"
-        }
-      },
-      "parameters": [
-        {
-          "uniqueItems": true,
-          "type": "string",
-          "description": "name of the WorkloadRebalancer",
-          "name": "name",
-          "in": "path",
-          "required": true
-        },
-        {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
-        }
-      ]
-    },
-    "/apis/apps.karmada.io/v1alpha1/workloadrebalancers/{name}/status": {
-      "get": {
-        "description": "read status of the specified WorkloadRebalancer",
-        "consumes": [
-          "*/*"
-        ],
-        "produces": [
-          "application/json",
-          "application/yaml",
-          "application/vnd.kubernetes.protobuf"
-        ],
-        "schemes": [
-          "https"
-        ],
-        "tags": [
-          "appsKarmadaIo_v1alpha1"
-        ],
-        "operationId": "readAppsKarmadaIoV1alpha1WorkloadRebalancerStatus",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-            }
-          }
-        },
-        "x-kubernetes-action": "get",
-        "x-kubernetes-group-version-kind": {
-          "group": "apps.karmada.io",
-          "version": "v1alpha1",
-          "kind": "WorkloadRebalancer"
-        }
-      },
-      "put": {
-        "description": "replace status of the specified WorkloadRebalancer",
-        "consumes": [
-          "*/*"
-        ],
-        "produces": [
-          "application/json",
-          "application/yaml",
-          "application/vnd.kubernetes.protobuf"
-        ],
-        "schemes": [
-          "https"
-        ],
-        "tags": [
-          "appsKarmadaIo_v1alpha1"
-        ],
-        "operationId": "replaceAppsKarmadaIoV1alpha1WorkloadRebalancerStatus",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-            }
-          },
-          {
-            "uniqueItems": true,
-            "type": "string",
-            "description": "When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed",
-            "name": "dryRun",
-            "in": "query"
-          },
-          {
-            "$ref": "#/parameters/fieldManager-Qy4HdaTW"
-          },
-          {
-            "uniqueItems": true,
-            "type": "string",
-            "description": "fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered.",
-            "name": "fieldValidation",
-            "in": "query"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-            }
-          },
-          "201": {
-            "description": "Created",
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-            }
-          }
-        },
-        "x-kubernetes-action": "put",
-        "x-kubernetes-group-version-kind": {
-          "group": "apps.karmada.io",
-          "version": "v1alpha1",
-          "kind": "WorkloadRebalancer"
-        }
-      },
-      "patch": {
-        "description": "partially update status of the specified WorkloadRebalancer",
-        "consumes": [
-          "application/json-patch+json",
-          "application/merge-patch+json",
-          "application/strategic-merge-patch+json",
-          "application/apply-patch+yaml"
-        ],
-        "produces": [
-          "application/json",
-          "application/yaml",
-          "application/vnd.kubernetes.protobuf"
-        ],
-        "schemes": [
-          "https"
-        ],
-        "tags": [
-          "appsKarmadaIo_v1alpha1"
-        ],
-        "operationId": "patchAppsKarmadaIoV1alpha1WorkloadRebalancerStatus",
-        "parameters": [
-          {
-            "$ref": "#/parameters/body-78PwaGsr"
-          },
-          {
-            "uniqueItems": true,
-            "type": "string",
-            "description": "When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed",
-            "name": "dryRun",
-            "in": "query"
-          },
-          {
-            "$ref": "#/parameters/fieldManager-7c6nTn1T"
-          },
-          {
-            "uniqueItems": true,
-            "type": "string",
-            "description": "fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered.",
-            "name": "fieldValidation",
-            "in": "query"
-          },
-          {
-            "$ref": "#/parameters/force-tOGGb0Yi"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-            }
-          },
-          "201": {
-            "description": "Created",
-            "schema": {
-              "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-            }
-          }
-        },
-        "x-kubernetes-action": "patch",
-        "x-kubernetes-group-version-kind": {
-          "group": "apps.karmada.io",
-          "version": "v1alpha1",
-          "kind": "WorkloadRebalancer"
-        }
-      },
-      "parameters": [
-        {
-          "uniqueItems": true,
-          "type": "string",
-          "description": "name of the WorkloadRebalancer",
-          "name": "name",
-          "in": "path",
-          "required": true
-        },
-        {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
-        }
-      ]
-    },
     "/apis/autoscaling.karmada.io/": {
       "get": {
         "description": "get information of a group",
@@ -998,7 +152,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -1069,7 +223,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -1308,7 +462,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -1548,7 +702,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -1729,7 +883,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -1953,7 +1107,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -2193,7 +1347,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -2374,7 +1528,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -2430,7 +1584,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -2501,7 +1655,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -2575,7 +1729,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -2657,7 +1811,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -2731,7 +1885,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -2813,7 +1967,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -3109,7 +2263,7 @@
       },
       "parameters": [
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -3346,7 +2500,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -3977,7 +3131,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -4033,7 +3187,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -4112,7 +3266,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -4408,7 +3562,7 @@
       },
       "parameters": [
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -4645,7 +3799,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -4823,7 +3977,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -5044,7 +4198,7 @@
       },
       "parameters": [
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -5281,7 +4435,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -5459,7 +4613,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -5515,7 +4669,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -5594,7 +4748,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -5665,7 +4819,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -5744,7 +4898,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -5875,7 +5029,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -5946,7 +5100,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -6185,7 +5339,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -6425,7 +5579,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -6606,7 +5760,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -6830,7 +5984,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -7070,7 +6224,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -7251,7 +6405,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -7307,7 +6461,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -7378,7 +6532,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -7452,7 +6606,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -7534,7 +6688,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -7608,7 +6762,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -7690,7 +6844,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -7986,7 +7140,7 @@
       },
       "parameters": [
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -8223,7 +7377,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -8401,7 +7555,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -8622,7 +7776,7 @@
       },
       "parameters": [
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -8859,7 +8013,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -9037,7 +8191,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -9093,7 +8247,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -9332,7 +8486,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -9572,7 +8726,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -9753,7 +8907,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -9977,7 +9131,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -10217,7 +9371,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -10398,7 +9552,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -10622,7 +9776,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -10862,7 +10016,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -11043,7 +10197,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -11099,7 +10253,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -11170,7 +10324,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -11241,7 +10395,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -11320,7 +10474,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -11391,7 +10545,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -11470,7 +10624,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -11541,7 +10695,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -11615,7 +10769,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -11697,7 +10851,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -11771,7 +10925,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -11853,7 +11007,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -11927,7 +11081,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -12009,7 +11163,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -12080,7 +11234,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -12151,7 +11305,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -12447,7 +11601,7 @@
       },
       "parameters": [
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -12684,7 +11838,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -12862,7 +12016,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -12918,7 +12072,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -12997,7 +12151,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -13293,7 +12447,7 @@
       },
       "parameters": [
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -13530,7 +12684,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -13708,7 +12862,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -13764,7 +12918,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -13843,7 +12997,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -14142,7 +13296,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -14382,7 +13536,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -14563,7 +13717,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -14622,7 +13776,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -14704,7 +13858,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -14775,7 +13929,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -14846,7 +14000,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -15112,7 +14266,7 @@
       },
       "parameters": [
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -15349,7 +14503,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -15527,7 +14681,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -15751,7 +14905,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -15991,7 +15145,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -16172,7 +15326,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         }
       ]
     },
@@ -16228,7 +15382,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -16299,7 +15453,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -16378,7 +15532,7 @@
           "required": true
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -16452,7 +15606,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -16534,7 +15688,7 @@
           "$ref": "#/parameters/namespace-vgWSWtn3"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -16605,7 +15759,7 @@
           "$ref": "#/parameters/limit-1NfNmdNH"
         },
         {
-          "$ref": "#/parameters/pretty-tJGM1-ng"
+          "$ref": "#/parameters/pretty-nN7o5FEq"
         },
         {
           "$ref": "#/parameters/resourceVersion-5WAnf1kx"
@@ -16626,177 +15780,6 @@
     }
   },
   "definitions": {
-    "com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.ObjectReference": {
-      "description": "ObjectReference the expected resource.",
-      "type": "object",
-      "required": [
-        "apiVersion",
-        "kind",
-        "name"
-      ],
-      "properties": {
-        "apiVersion": {
-          "description": "APIVersion represents the API version of the target resource.",
-          "type": "string",
-          "default": ""
-        },
-        "kind": {
-          "description": "Kind represents the Kind of the target resource.",
-          "type": "string",
-          "default": ""
-        },
-        "name": {
-          "description": "Name of the target resource.",
-          "type": "string",
-          "default": ""
-        },
-        "namespace": {
-          "description": "Namespace of the target resource. Default is empty, which means it is a non-namespacescoped resource.",
-          "type": "string"
-        }
-      }
-    },
-    "com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.ObservedWorkload": {
-      "description": "ObservedWorkload the observed resource.",
-      "type": "object",
-      "required": [
-        "workload"
-      ],
-      "properties": {
-        "reason": {
-          "description": "Reason represents a machine-readable description of why this resource rebalanced failed.",
-          "type": "string"
-        },
-        "result": {
-          "description": "Result the observed rebalance result of resource.",
-          "type": "string"
-        },
-        "workload": {
-          "description": "Workload the observed resource.",
-          "default": {},
-          "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.ObjectReference"
-        }
-      }
-    },
-    "com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer": {
-      "description": "WorkloadRebalancer represents the desired behavior and status of a job which can enforces a resource rebalance.",
-      "type": "object",
-      "required": [
-        "spec"
-      ],
-      "properties": {
-        "apiVersion": {
-          "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
-          "type": "string"
-        },
-        "kind": {
-          "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
-          "type": "string"
-        },
-        "metadata": {
-          "default": {},
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta"
-        },
-        "spec": {
-          "description": "Spec represents the specification of the desired behavior of WorkloadRebalancer.",
-          "default": {},
-          "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancerSpec"
-        },
-        "status": {
-          "description": "Status represents the status of WorkloadRebalancer.",
-          "default": {},
-          "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancerStatus"
-        }
-      },
-      "x-kubernetes-group-version-kind": [
-        {
-          "group": "apps.karmada.io",
-          "kind": "WorkloadRebalancer",
-          "version": "v1alpha1"
-        }
-      ]
-    },
-    "com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancerList": {
-      "description": "WorkloadRebalancerList contains a list of WorkloadRebalancer",
-      "type": "object",
-      "required": [
-        "items"
-      ],
-      "properties": {
-        "apiVersion": {
-          "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
-          "type": "string"
-        },
-        "items": {
-          "description": "Items holds a list of WorkloadRebalancer.",
-          "type": "array",
-          "items": {
-            "default": {},
-            "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancer"
-          }
-        },
-        "kind": {
-          "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
-          "type": "string"
-        },
-        "metadata": {
-          "default": {},
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta"
-        }
-      },
-      "x-kubernetes-group-version-kind": [
-        {
-          "group": "apps.karmada.io",
-          "kind": "WorkloadRebalancerList",
-          "version": "v1alpha1"
-        }
-      ]
-    },
-    "com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancerSpec": {
-      "description": "WorkloadRebalancerSpec represents the specification of the desired behavior of Reschedule.",
-      "type": "object",
-      "required": [
-        "workloads"
-      ],
-      "properties": {
-        "ttlSecondsAfterFinished": {
-          "description": "TTLSecondsAfterFinished limits the lifetime of a WorkloadRebalancer that has finished execution (means each target workload is finished with result of Successful or Failed). If this field is set, ttlSecondsAfterFinished after the WorkloadRebalancer finishes, it is eligible to be automatically deleted. If this field is unset, the WorkloadRebalancer won't be automatically deleted. If this field is set to zero, the WorkloadRebalancer becomes eligible to be deleted immediately after it finishes.",
-          "type": "integer",
-          "format": "int32"
-        },
-        "workloads": {
-          "description": "Workloads used to specify the list of expected resource. Nil or empty list is not allowed.",
-          "type": "array",
-          "items": {
-            "default": {},
-            "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.ObjectReference"
-          }
-        }
-      }
-    },
-    "com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.WorkloadRebalancerStatus": {
-      "description": "WorkloadRebalancerStatus contains information about the current status of a WorkloadRebalancer updated periodically by schedule trigger controller.",
-      "type": "object",
-      "properties": {
-        "finishTime": {
-          "description": "FinishTime represents the finish time of rebalancer.",
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
-        },
-        "observedGeneration": {
-          "description": "ObservedGeneration is the generation(.metadata.generation) observed by the controller. If ObservedGeneration is less than the generation in metadata means the controller hasn't confirmed the rebalance result or hasn't done the rebalance yet.",
-          "type": "integer",
-          "format": "int64"
-        },
-        "observedWorkloads": {
-          "description": "ObservedWorkloads contains information about the execution states and messages of target resources.",
-          "type": "array",
-          "items": {
-            "default": {},
-            "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.apps.v1alpha1.ObservedWorkload"
-          }
-        }
-      }
-    },
     "com.github.karmada-io.karmada.pkg.apis.autoscaling.v1alpha1.CronFederatedHPA": {
       "description": "CronFederatedHPA represents a collection of repeating schedule to scale replica number of a specific workload. It can scale any resource implementing the scale subresource as well as FederatedHPA.",
       "type": "object",
@@ -17205,7 +16188,7 @@
       }
     },
     "com.github.karmada-io.karmada.pkg.apis.cluster.v1alpha1.AllocatableModeling": {
-      "description": "AllocatableModeling represents the number of nodes in which allocatable resources in a specific resource model grade. E.g. AllocatableModeling[Grade: 2, Count: 10] means 10 nodes belong to resource model in grade 2.",
+      "description": "AllocatableModeling represents the number of nodes in which allocatable resources in a specific resource model grade. E.g. AllocatableModeling{Grade: 2, Count: 10} means 10 nodes belong to resource model in grade 2.",
       "type": "object",
       "required": [
         "grade",
@@ -17344,7 +16327,7 @@
           "type": "string"
         },
         "resourceModels": {
-          "description": "ResourceModels is the list of resource modeling in this cluster. Each modeling quota can be customized by the user. Modeling name must be one of the following: cpu, memory, storage, ephemeral-storage. If the user does not define the modeling name and modeling quota, it will be the default model. The default model grade from 0 to 8. When grade = 0 or grade = 1, the default model's cpu quota and memory quota is a fix value. When grade greater than or equal to 2, each default model's cpu quota is [2^(grade-1), 2^grade), 2 &lt;= grade &lt;= 7 Each default model's memory quota is [2^(grade + 2), 2^(grade + 3)), 2 &lt;= grade &lt;= 7 E.g. grade 0 likes this: - grade: 0\n  ranges:\n  - name: \"cpu\"\n    min: 0 C\n    max: 1 C\n  - name: \"memory\"\n    min: 0 GB\n    max: 4 GB\n\n- grade: 1\n  ranges:\n  - name: \"cpu\"\n    min: 1 C\n    max: 2 C\n  - name: \"memory\"\n    min: 4 GB\n    max: 16 GB\n\n- grade: 2\n  ranges:\n  - name: \"cpu\"\n    min: 2 C\n    max: 4 C\n  - name: \"memory\"\n    min: 16 GB\n    max: 32 GB\n\n- grade: 7\n  range:\n  - name: \"cpu\"\n    min: 64 C\n    max: 128 C\n  - name: \"memory\"\n    min: 512 GB\n    max: 1024 GB\n\ngrade 8, the last one likes below. No matter what Max value you pass, the meaning of Max value in this grade is infinite. You can pass any number greater than Min value. - grade: 8\n  range:\n  - name: \"cpu\"\n    min: 128 C\n    max: MAXINT\n  - name: \"memory\"\n    min: 1024 GB\n    max: MAXINT",
+          "description": "ResourceModels is the list of resource modeling in this cluster. Each modeling quota can be customized by the user. Modeling name must be one of the following: cpu, memory, storage, ephemeral-storage. If the user does not define the modeling name and modeling quota, it will be the default model. The default model grade from 0 to 8. When grade = 0 or grade = 1, the default model's cpu quota and memory quota is a fix value. When grade greater than or equal to 2, each default model's cpu quota is [2^(grade-1), 2^grade), 2 \u003c= grade \u003c= 7 Each default model's memory quota is [2^(grade + 2), 2^(grade + 3)), 2 \u003c= grade \u003c= 7 E.g. grade 0 likes this: - grade: 0\n  ranges:\n  - name: \"cpu\"\n    min: 0 C\n    max: 1 C\n  - name: \"memory\"\n    min: 0 GB\n    max: 4 GB\n\n- grade: 1\n  ranges:\n  - name: \"cpu\"\n    min: 1 C\n    max: 2 C\n  - name: \"memory\"\n    min: 4 GB\n    max: 16 GB\n\n- grade: 2\n  ranges:\n  - name: \"cpu\"\n    min: 2 C\n    max: 4 C\n  - name: \"memory\"\n    min: 16 GB\n    max: 32 GB\n\n- grade: 7\n  range:\n  - name: \"cpu\"\n    min: 64 C\n    max: 128 C\n  - name: \"memory\"\n    min: 512 GB\n    max: 1024 GB\n\ngrade 8, the last one likes below. No matter what Max value you pass, the meaning of Max value in this grade is infinite. You can pass any number greater than Min value. - grade: 8\n  range:\n  - name: \"cpu\"\n    min: 128 C\n    max: MAXINT\n  - name: \"memory\"\n    min: 1024 GB\n    max: MAXINT",
           "type": "array",
           "items": {
             "default": {},
@@ -17495,10 +16478,12 @@
       "properties": {
         "max": {
           "description": "Max is the maximum amount of this resource represented by resource name. Special Instructions, for the last ResourceModelRange, which no matter what Max value you pass, the meaning is infinite. Because for the last item, any ResourceModelRange's quota larger than Min will be classified to the last one. Of course, the value of the Max field is always greater than the value of the Min field. It should be true in any case.",
+          "default": {},
           "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
         },
         "min": {
           "description": "Min is the minimum amount of this resource represented by resource name. Note: The Min value of first grade(usually 0) always acts as zero. E.g. [1,2) equal to [0,2).",
+          "default": {},
           "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
         },
         "name": {
@@ -17516,6 +16501,7 @@
           "description": "Allocatable represents the resources of a cluster that are available for scheduling. Total amount of allocatable resources on all nodes.",
           "type": "object",
           "additionalProperties": {
+            "default": {},
             "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
           }
         },
@@ -17531,6 +16517,7 @@
           "description": "Allocated represents the resources of a cluster that have been scheduled. Total amount of required resources of all Pods that have been scheduled to nodes.",
           "type": "object",
           "additionalProperties": {
+            "default": {},
             "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
           }
         },
@@ -17538,6 +16525,7 @@
           "description": "Allocating represents the resources of a cluster that are pending for scheduling. Total amount of required resources of all Pods that are waiting for scheduling.",
           "type": "object",
           "additionalProperties": {
+            "default": {},
             "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
           }
         }
@@ -17605,7 +16593,7 @@
       ],
       "properties": {
         "luaScript": {
-          "description": "LuaScript holds the Lua script that is used to interpret the dependencies of a specific resource. The script should implement a function as follows:\n\n```\n  luaScript: >\n      function GetDependencies(desiredObj)\n          dependencies = []\n          serviceAccountName = desiredObj.spec.template.spec.serviceAccountName\n          if serviceAccountName ~= nil and serviceAccountName ~= \"default\" then\n              dependency = []\n              dependency.apiVersion = \"v1\"\n              dependency.kind = \"ServiceAccount\"\n              dependency.name = serviceAccountName\n              dependency.namespace = desiredObj.metadata.namespace\n              dependencies[1] = dependency\n          end\n          return dependencies\n      end\n```\n\nThe content of the LuaScript needs to be a whole function including both declaration and implementation.\n\nThe parameters will be supplied by the system:\n  - desiredObj: the object represents the configuration to be applied\n      to the member cluster.\n\nThe returned value should be expressed by a slice of DependentObjectReference.",
+          "description": "LuaScript holds the Lua script that is used to interpret the dependencies of a specific resource. The script should implement a function as follows:\n\n```\n  luaScript: \u003e\n      function GetDependencies(desiredObj)\n          dependencies = {}\n          if desiredObj.spec.serviceAccountName ~= nil and desiredObj.spec.serviceAccountName ~= \"default\" then\n              dependency = {}\n              dependency.apiVersion = \"v1\"\n              dependency.kind = \"ServiceAccount\"\n              dependency.name = desiredObj.spec.serviceAccountName\n              dependency.namespace = desiredObj.namespace\n              dependencies[1] = {}\n              dependencies[1] = dependency\n          end\n          return dependencies\n      end\n```\n\nThe content of the LuaScript needs to be a whole function including both declaration and implementation.\n\nThe parameters will be supplied by the system:\n  - desiredObj: the object represents the configuration to be applied\n      to the member cluster.\n\nThe returned value should be expressed by a slice of DependentObjectReference.",
           "type": "string",
           "default": ""
         }
@@ -17619,7 +16607,7 @@
       ],
       "properties": {
         "luaScript": {
-          "description": "LuaScript holds the Lua script that is used to assess the health state of a specific resource. The script should implement a function as follows:\n\n```\n  luaScript: >\n      function InterpretHealth(observedObj)\n          if observedObj.status.readyReplicas == observedObj.spec.replicas then\n              return true\n          end\n      end\n```\n\nThe content of the LuaScript needs to be a whole function including both declaration and implementation.\n\nThe parameters will be supplied by the system:\n  - observedObj: the object represents the configuration that is observed\n      from a specific member cluster.\n\nThe returned boolean value indicates the health status.",
+          "description": "LuaScript holds the Lua script that is used to assess the health state of a specific resource. The script should implement a function as follows:\n\n```\n  luaScript: \u003e\n      function InterpretHealth(observedObj)\n          if observedObj.status.readyReplicas == observedObj.spec.replicas then\n              return true\n          end\n      end\n```\n\nThe content of the LuaScript needs to be a whole function including both declaration and implementation.\n\nThe parameters will be supplied by the system:\n  - observedObj: the object represents the configuration that is observed\n      from a specific member cluster.\n\nThe returned boolean value indicates the health status.",
           "type": "string",
           "default": ""
         }
@@ -17633,7 +16621,7 @@
       ],
       "properties": {
         "luaScript": {
-          "description": "LuaScript holds the Lua script that is used to retain runtime values to the desired specification.\n\nThe script should implement a function as follows:\n\n```\n  luaScript: >\n      function Retain(desiredObj, observedObj)\n          desiredObj.spec.fieldFoo = observedObj.spec.fieldFoo\n          return desiredObj\n      end\n```\n\nThe content of the LuaScript needs to be a whole function including both declaration and implementation.\n\nThe parameters will be supplied by the system:\n  - desiredObj: the object represents the configuration to be applied\n      to the member cluster.\n  - observedObj: the object represents the configuration that is observed\n      from a specific member cluster.\n\nThe returned object should be a retained configuration which will be applied to member cluster eventually.",
+          "description": "LuaScript holds the Lua script that is used to retain runtime values to the desired specification.\n\nThe script should implement a function as follows:\n\n```\n  luaScript: \u003e\n      function Retain(desiredObj, observedObj)\n          desiredObj.spec.fieldFoo = observedObj.spec.fieldFoo\n          return desiredObj\n      end\n```\n\nThe content of the LuaScript needs to be a whole function including both declaration and implementation.\n\nThe parameters will be supplied by the system:\n  - desiredObj: the object represents the configuration to be applied\n      to the member cluster.\n  - observedObj: the object represents the configuration that is observed\n      from a specific member cluster.\n\nThe returned object should be a retained configuration which will be applied to member cluster eventually.",
           "type": "string",
           "default": ""
         }
@@ -17647,7 +16635,7 @@
       ],
       "properties": {
         "luaScript": {
-          "description": "LuaScript holds the Lua script that is used to discover the resource's replica as well as resource requirements\n\nThe script should implement a function as follows:\n\n```\n  luaScript: >\n      function GetReplicas(desiredObj)\n          replica = desiredObj.spec.replicas\n          requirement = []\n          requirement.nodeClaim = []\n          requirement.nodeClaim.nodeSelector = desiredObj.spec.template.spec.nodeSelector\n          requirement.nodeClaim.tolerations = desiredObj.spec.template.spec.tolerations\n          requirement.resourceRequest = desiredObj.spec.template.spec.containers[1].resources.limits\n          return replica, requirement\n      end\n```\n\nThe content of the LuaScript needs to be a whole function including both declaration and implementation.\n\nThe parameters will be supplied by the system:\n  - desiredObj: the object represents the configuration to be applied\n      to the member cluster.\n\nThe function expects two return values:\n  - replica: the declared replica number\n  - requirement: the resource required by each replica expressed with a\n      ResourceBindingSpec.ReplicaRequirements.\nThe returned values will be set into a ResourceBinding or ClusterResourceBinding.",
+          "description": "LuaScript holds the Lua script that is used to discover the resource's replica as well as resource requirements\n\nThe script should implement a function as follows:\n\n```\n  luaScript: \u003e\n      function GetReplicas(desiredObj)\n          replica = desiredObj.spec.replicas\n          requirement = {}\n          requirement.nodeClaim = {}\n          requirement.nodeClaim.nodeSelector = desiredObj.spec.template.spec.nodeSelector\n          requirement.nodeClaim.tolerations = desiredObj.spec.template.spec.tolerations\n          requirement.resourceRequest = desiredObj.spec.template.spec.containers[1].resources.limits\n          return replica, requirement\n      end\n```\n\nThe content of the LuaScript needs to be a whole function including both declaration and implementation.\n\nThe parameters will be supplied by the system:\n  - desiredObj: the object represents the configuration to be applied\n      to the member cluster.\n\nThe function expects two return values:\n  - replica: the declared replica number\n  - requirement: the resource required by each replica expressed with a\n      ResourceBindingSpec.ReplicaRequirements.\nThe returned values will be set into a ResourceBinding or ClusterResourceBinding.",
           "type": "string",
           "default": ""
         }
@@ -17661,7 +16649,7 @@
       ],
       "properties": {
         "luaScript": {
-          "description": "LuaScript holds the Lua script that is used to revise replicas in the desired specification. The script should implement a function as follows:\n\n```\n  luaScript: >\n      function ReviseReplica(desiredObj, desiredReplica)\n          desiredObj.spec.replicas = desiredReplica\n          return desiredObj\n      end\n```\n\nThe content of the LuaScript needs to be a whole function including both declaration and implementation.\n\nThe parameters will be supplied by the system:\n  - desiredObj: the object represents the configuration to be applied\n      to the member cluster.\n  - desiredReplica: the replica number should be applied with.\n\nThe returned object should be a revised configuration which will be applied to member cluster eventually.",
+          "description": "LuaScript holds the Lua script that is used to revise replicas in the desired specification. The script should implement a function as follows:\n\n```\n  luaScript: \u003e\n      function ReviseReplica(desiredObj, desiredReplica)\n          desiredObj.spec.replicas = desiredReplica\n          return desiredObj\n      end\n```\n\nThe content of the LuaScript needs to be a whole function including both declaration and implementation.\n\nThe parameters will be supplied by the system:\n  - desiredObj: the object represents the configuration to be applied\n      to the member cluster.\n  - desiredReplica: the replica number should be applied with.\n\nThe returned object should be a revised configuration which will be applied to member cluster eventually.",
           "type": "string",
           "default": ""
         }
@@ -17921,7 +16909,7 @@
       ],
       "properties": {
         "luaScript": {
-          "description": "LuaScript holds the Lua script that is used to aggregate decentralized statuses to the desired specification. The script should implement a function as follows:\n\n```\n  luaScript: >\n      function AggregateStatus(desiredObj, statusItems)\n          for i = 1, #statusItems do\n              desiredObj.status.readyReplicas = desiredObj.status.readyReplicas + items[i].readyReplicas\n          end\n          return desiredObj\n      end\n```\n\nThe content of the LuaScript needs to be a whole function including both declaration and implementation.\n\nThe parameters will be supplied by the system:\n  - desiredObj: the object represents a resource template.\n  - statusItems: the slice of status expressed with AggregatedStatusItem.\n\nThe returned object should be a whole object with status aggregated.",
+          "description": "LuaScript holds the Lua script that is used to aggregate decentralized statuses to the desired specification. The script should implement a function as follows:\n\n```\n  luaScript: \u003e\n      function AggregateStatus(desiredObj, statusItems)\n          for i = 1, #statusItems do\n              desiredObj.status.readyReplicas = desiredObj.status.readyReplicas + items[i].readyReplicas\n          end\n          return desiredObj\n      end\n```\n\nThe content of the LuaScript needs to be a whole function including both declaration and implementation.\n\nThe parameters will be supplied by the system:\n  - desiredObj: the object represents a resource template.\n  - statusItems: the slice of status expressed with AggregatedStatusItem.\n\nThe returned object should be a whole object with status aggregated.",
           "type": "string",
           "default": ""
         }
@@ -17935,7 +16923,7 @@
       ],
       "properties": {
         "luaScript": {
-          "description": "LuaScript holds the Lua script that is used to get the status from the observed specification. The script should implement a function as follows:\n\n```\n  luaScript: >\n      function ReflectStatus(observedObj)\n          status = []\n          status.readyReplicas = observedObj.status.observedObj\n          return status\n      end\n```\n\nThe content of the LuaScript needs to be a whole function including both declaration and implementation.\n\nThe parameters will be supplied by the system:\n  - observedObj: the object represents the configuration that is observed\n      from a specific member cluster.\n\nThe returned status could be the whole status or part of it and will be set into both Work and ResourceBinding(ClusterResourceBinding).",
+          "description": "LuaScript holds the Lua script that is used to get the status from the observed specification. The script should implement a function as follows:\n\n```\n  luaScript: \u003e\n      function ReflectStatus(observedObj)\n          status = {}\n          status.readyReplicas = observedObj.status.observedObj\n          return status\n      end\n```\n\nThe content of the LuaScript needs to be a whole function including both declaration and implementation.\n\nThe parameters will be supplied by the system:\n  - observedObj: the object represents the configuration that is observed\n      from a specific member cluster.\n\nThe returned status could be the whole status or part of it and will be set into both Work and ResourceBinding(ClusterResourceBinding).",
           "type": "string",
           "default": ""
         }
@@ -18502,6 +17490,7 @@
           "description": "Hard is the set of enforced hard limits for each named resource. More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/",
           "type": "object",
           "additionalProperties": {
+            "default": {},
             "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
           }
         },
@@ -18509,6 +17498,7 @@
           "description": "Used is the current observed total usage of the resource in the namespace.",
           "type": "object",
           "additionalProperties": {
+            "default": {},
             "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
           }
         }
@@ -18647,6 +17637,7 @@
           "description": "Overall is the set of desired hard limits for each named resource.",
           "type": "object",
           "additionalProperties": {
+            "default": {},
             "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
           }
         },
@@ -18676,6 +17667,7 @@
           "description": "Overall is the set of enforced hard limits for each named resource.",
           "type": "object",
           "additionalProperties": {
+            "default": {},
             "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
           }
         },
@@ -18683,6 +17675,7 @@
           "description": "OverallUsed is the current observed total usage of the resource in the namespace.",
           "type": "object",
           "additionalProperties": {
+            "default": {},
             "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
           }
         }
@@ -18721,7 +17714,7 @@
           "default": ""
         },
         "predicate": {
-          "description": "Predicate filters images before applying the rule.\n\nDefaults to nil, in that case, the system will automatically detect image fields if the resource type is Pod, ReplicaSet, Deployment, StatefulSet, DaemonSet or Job by following rule:\n  - Pod: /spec/containers/&lt;N&gt;/image\n  - ReplicaSet: /spec/template/spec/containers/&lt;N&gt;/image\n  - Deployment: /spec/template/spec/containers/&lt;N&gt;/image\n  - DaemonSet: /spec/template/spec/containers/&lt;N&gt;/image\n  - StatefulSet: /spec/template/spec/containers/&lt;N&gt;/image\n  - Job: /spec/template/spec/containers/&lt;N&gt;/image\nIn addition, all images will be processed if the resource object has more than one container.\n\nIf not nil, only images matches the filters will be processed.",
+          "description": "Predicate filters images before applying the rule.\n\nDefaults to nil, in that case, the system will automatically detect image fields if the resource type is Pod, ReplicaSet, Deployment, StatefulSet, DaemonSet or Job by following rule:\n  - Pod: /spec/containers/\u003cN\u003e/image\n  - ReplicaSet: /spec/template/spec/containers/\u003cN\u003e/image\n  - Deployment: /spec/template/spec/containers/\u003cN\u003e/image\n  - DaemonSet: /spec/template/spec/containers/\u003cN\u003e/image\n  - StatefulSet: /spec/template/spec/containers/\u003cN\u003e/image\n  - Job: /spec/template/spec/containers/\u003cN\u003e/image\nIn addition, all images will be processed if the resource object has more than one container.\n\nIf not nil, only images matches the filters will be processed.",
           "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.policy.v1alpha1.ImagePredicate"
         },
         "value": {
@@ -18978,6 +17971,7 @@
         },
         "value": {
           "description": "Value to be applied to target field. Must be empty when operator is Remove.",
+          "default": {},
           "$ref": "#/definitions/io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.JSON"
         }
       }
@@ -19226,6 +18220,7 @@
           "description": "Hard is the set of desired hard limits for each named resource.",
           "type": "object",
           "additionalProperties": {
+            "default": {},
             "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
           }
         }
@@ -19752,6 +18747,7 @@
           "description": "Manifests represents a list of Kubernetes resources to be deployed on the managed cluster.",
           "type": "array",
           "items": {
+            "default": {},
             "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.work.v1alpha1.Manifest"
           }
         }
@@ -20019,6 +19015,7 @@
           "description": "ResourceRequest represents the resources required by each replica.",
           "type": "object",
           "additionalProperties": {
+            "default": {},
             "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
           }
         }
@@ -20154,10 +19151,6 @@
             "$ref": "#/definitions/com.github.karmada-io.karmada.pkg.apis.work.v1alpha2.BindingSnapshot"
           }
         },
-        "rescheduleTriggeredAt": {
-          "description": "RescheduleTriggeredAt is a timestamp representing when the referenced resource is triggered rescheduling. When this field is updated, it means a rescheduling is manually triggered by user, and the expected behavior of this action is to do a complete recalculation without referring to last scheduling results. It works with the status.lastScheduledTime field, and only when this timestamp is later than timestamp in status.lastScheduledTime will the rescheduling actually execute, otherwise, ignored.\n\nIt is represented in RFC3339 form (like '2006-01-02T15:04:05Z') and is in UTC.",
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
-        },
         "resource": {
           "description": "Resource represents the Kubernetes resource to be propagated.",
           "default": {},
@@ -20188,10 +19181,6 @@
             "default": {},
             "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Condition"
           }
-        },
-        "lastScheduledTime": {
-          "description": "LastScheduledTime representing the latest timestamp when scheduler successfully finished a scheduling. It is represented in RFC3339 form (like '2006-01-02T15:04:05Z') and is in UTC.",
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
         },
         "schedulerObservedGeneration": {
           "description": "SchedulerObservedGeneration is the generation(.metadata.generation) observed by the scheduler. If SchedulerObservedGeneration is less than the generation in metadata means the scheduler hasn't confirmed the scheduling result or hasn't done the schedule yet.",
@@ -20463,6 +19452,7 @@
       "properties": {
         "lastTransitionTime": {
           "description": "lastTransitionTime is the last time the condition transitioned from one status to another",
+          "default": {},
           "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
         },
         "message": {
@@ -20813,10 +19803,6 @@
           "description": "IP is set for load-balancer ingress points that are IP based (typically GCE or OpenStack load-balancers)",
           "type": "string"
         },
-        "ipMode": {
-          "description": "IPMode specifies how the load-balancer IP behaves, and may only be specified when the ip field is specified. Setting this to \"VIP\" indicates that traffic is delivered to the node with the destination set to the load-balancer's IP and port. Setting this to \"Proxy\" indicates that traffic is delivered to the node or pod with the destination set to the node's IP and node port or the pod's IP and port. Service implementations may use this information to adjust traffic routing.",
-          "type": "string"
-        },
         "ports": {
           "description": "Ports is a list of records of service ports If used, every port defined in the service should have an entry in it",
           "type": "array",
@@ -21007,7 +19993,7 @@
       }
     },
     "io.k8s.api.core.v1.Toleration": {
-      "description": "The pod this Toleration is attached to tolerates any taint that matches the triple &lt;key,value,effect&gt; using the matching operator &lt;operator&gt;.",
+      "description": "The pod this Toleration is attached to tolerates any taint that matches the triple \u003ckey,value,effect\u003e using the matching operator \u003coperator\u003e.",
       "type": "object",
       "properties": {
         "effect": {
@@ -21096,7 +20082,7 @@
       }
     },
     "io.k8s.api.networking.v1.HTTPIngressRuleValue": {
-      "description": "HTTPIngressRuleValue is a list of http selectors pointing to backends. In the example: http://&lt;host&gt;/&lt;path&gt;?&lt;searchpart&gt; -&gt; backend where where parts of the url correspond to RFC 3986, this resource will be used to match against everything after the last '/' and before the first '?' or '#'.",
+      "description": "HTTPIngressRuleValue is a list of http selectors pointing to backends. In the example: http://\u003chost\u003e/\u003cpath\u003e?\u003csearchpart\u003e -\u003e backend where where parts of the url correspond to RFC 3986, this resource will be used to match against everything after the last '/' and before the first '?' or '#'.",
       "type": "object",
       "required": [
         "paths"
@@ -21235,7 +20221,7 @@
           "$ref": "#/definitions/io.k8s.api.networking.v1.IngressBackend"
         },
         "ingressClassName": {
-          "description": "ingressClassName is the name of an IngressClass cluster resource. Ingress controller implementations use this field to know whether they should be serving this Ingress resource, by a transitive connection (controller -&gt; IngressClass -&gt; Ingress resource). Although the `kubernetes.io/ingress.class` annotation (simple constant name) was never formally defined, it was widely supported by Ingress controllers to create a direct binding between Ingress controller and Ingress resources. Newly created Ingress resources should prefer using the field. However, even though the annotation is officially deprecated, for backwards compatibility reasons, ingress controllers should still honor that annotation if present.",
+          "description": "ingressClassName is the name of an IngressClass cluster resource. Ingress controller implementations use this field to know whether they should be serving this Ingress resource, by a transitive connection (controller -\u003e IngressClass -\u003e Ingress resource). Although the `kubernetes.io/ingress.class` annotation (simple constant name) was never formally defined, it was widely supported by Ingress controllers to create a direct binding between Ingress controller and Ingress resources. Newly created Ingress resources should prefer using the field. However, even though the annotation is officially deprecated, for backwards compatibility reasons, ingress controllers should still honor that annotation if present.",
           "type": "string"
         },
         "rules": {
@@ -21293,10 +20279,10 @@
       }
     },
     "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.JSON": {
-      "description": "JSON represents any valid JSON value. These types are supported: bool, int64, float64, string, []interface[], map[string]interface[] and nil."
+      "description": "JSON represents any valid JSON value. These types are supported: bool, int64, float64, string, []interface{}, map[string]interface{} and nil."
     },
     "io.k8s.apimachinery.pkg.api.resource.Quantity": {
-      "description": "Quantity is a fixed-point representation of a number. It provides convenient marshaling/unmarshaling in JSON and YAML, in addition to String() and AsInt64() accessors.\n\nThe serialization format is:\n\n``` <quantity>        ::= <signedNumber><suffix>\n\n\t(Note that <suffix> may be empty, from the \"\" case in <decimalSI>.)\n\n<digit>           ::= 0 | 1 | ... | 9 <digits>          ::= <digit> | <digit><digits> <number>          ::= <digits> | <digits>.<digits> | <digits>. | .<digits> <sign>            ::= \"+\" | \"-\" <signedNumber>    ::= <number> | <sign><number> <suffix>          ::= <binarySI> | <decimalExponent> | <decimalSI> <binarySI>        ::= Ki | Mi | Gi | Ti | Pi | Ei\n\n\t(International System of units; See: http://physics.nist.gov/cuu/Units/binary.html)\n\n<decimalSI>       ::= m | \"\" | k | M | G | T | P | E\n\n\t(Note that 1024 = 1Ki but 1000 = 1k; I didn't choose the capitalization.)\n\n<decimalExponent> ::= \"e\" <signedNumber> | \"E\" <signedNumber> ```\n\nNo matter which of the three exponent forms is used, no quantity may represent a number greater than 2^63-1 in magnitude, nor may it have more than 3 decimal places. Numbers larger or more precise will be capped or rounded up. (E.g.: 0.1m will rounded up to 1m.) This may be extended in the future if we require larger or smaller quantities.\n\nWhen a Quantity is parsed from a string, it will remember the type of suffix it had, and will use the same type again when it is serialized.\n\nBefore serializing, Quantity will be put in \"canonical form\". This means that Exponent/suffix will be adjusted up or down (with a corresponding increase or decrease in Mantissa) such that:\n\n- No precision is lost - No fractional digits will be emitted - The exponent (or suffix) is as large as possible.\n\nThe sign will be omitted unless the number is negative.\n\nExamples:\n\n- 1.5 will be serialized as \"1500m\" - 1.5Gi will be serialized as \"1536Mi\"\n\nNote that the quantity will NEVER be internally represented by a floating point number. That is the whole point of this exercise.\n\nNon-canonical values will still parse as long as they are well formed, but will be re-emitted in their canonical form. (So always use canonical form, or don't diff.)\n\nThis format is intended to make it difficult to use these numbers without writing some sort of special handling code in the hopes that that will cause implementors to also use a fixed point implementation.",
+      "description": "Quantity is a fixed-point representation of a number. It provides convenient marshaling/unmarshaling in JSON and YAML, in addition to String() and AsInt64() accessors.\n\nThe serialization format is:\n\n``` \u003cquantity\u003e        ::= \u003csignedNumber\u003e\u003csuffix\u003e\n\n\t(Note that \u003csuffix\u003e may be empty, from the \"\" case in \u003cdecimalSI\u003e.)\n\n\u003cdigit\u003e           ::= 0 | 1 | ... | 9 \u003cdigits\u003e          ::= \u003cdigit\u003e | \u003cdigit\u003e\u003cdigits\u003e \u003cnumber\u003e          ::= \u003cdigits\u003e | \u003cdigits\u003e.\u003cdigits\u003e | \u003cdigits\u003e. | .\u003cdigits\u003e \u003csign\u003e            ::= \"+\" | \"-\" \u003csignedNumber\u003e    ::= \u003cnumber\u003e | \u003csign\u003e\u003cnumber\u003e \u003csuffix\u003e          ::= \u003cbinarySI\u003e | \u003cdecimalExponent\u003e | \u003cdecimalSI\u003e \u003cbinarySI\u003e        ::= Ki | Mi | Gi | Ti | Pi | Ei\n\n\t(International System of units; See: http://physics.nist.gov/cuu/Units/binary.html)\n\n\u003cdecimalSI\u003e       ::= m | \"\" | k | M | G | T | P | E\n\n\t(Note that 1024 = 1Ki but 1000 = 1k; I didn't choose the capitalization.)\n\n\u003cdecimalExponent\u003e ::= \"e\" \u003csignedNumber\u003e | \"E\" \u003csignedNumber\u003e ```\n\nNo matter which of the three exponent forms is used, no quantity may represent a number greater than 2^63-1 in magnitude, nor may it have more than 3 decimal places. Numbers larger or more precise will be capped or rounded up. (E.g.: 0.1m will rounded up to 1m.) This may be extended in the future if we require larger or smaller quantities.\n\nWhen a Quantity is parsed from a string, it will remember the type of suffix it had, and will use the same type again when it is serialized.\n\nBefore serializing, Quantity will be put in \"canonical form\". This means that Exponent/suffix will be adjusted up or down (with a corresponding increase or decrease in Mantissa) such that:\n\n- No precision is lost - No fractional digits will be emitted - The exponent (or suffix) is as large as possible.\n\nThe sign will be omitted unless the number is negative.\n\nExamples:\n\n- 1.5 will be serialized as \"1500m\" - 1.5Gi will be serialized as \"1536Mi\"\n\nNote that the quantity will NEVER be internally represented by a floating point number. That is the whole point of this exercise.\n\nNon-canonical values will still parse as long as they are well formed, but will be re-emitted in their canonical form. (So always use canonical form, or don't diff.)\n\nThis format is intended to make it difficult to use these numbers without writing some sort of special handling code in the hopes that that will cause implementors to also use a fixed point implementation.",
       "type": "string"
     },
     "io.k8s.apimachinery.pkg.apis.meta.v1.APIGroup": {
@@ -21502,6 +20488,7 @@
       "properties": {
         "lastTransitionTime": {
           "description": "lastTransitionTime is the last time the condition transitioned from one status to another. This should be when the underlying condition changed.  If that is not known, then using the time when the API field changed is acceptable.",
+          "default": {},
           "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
         },
         "message": {
@@ -21604,11 +20591,6 @@
           "group": "apps",
           "kind": "DeleteOptions",
           "version": "v1beta2"
-        },
-        {
-          "group": "apps.karmada.io",
-          "kind": "DeleteOptions",
-          "version": "v1alpha1"
         },
         {
           "group": "authentication.k8s.io",
@@ -21738,7 +20720,7 @@
         {
           "group": "flowcontrol.apiserver.k8s.io",
           "kind": "DeleteOptions",
-          "version": "v1"
+          "version": "v1alpha1"
         },
         {
           "group": "flowcontrol.apiserver.k8s.io",
@@ -21888,7 +20870,7 @@
       ]
     },
     "io.k8s.apimachinery.pkg.apis.meta.v1.FieldsV1": {
-      "description": "FieldsV1 stores a set of fields in a data structure like a Trie, in JSON format.\n\nEach key is either a '.' representing the field itself, and will always map to an empty set, or a string representing a sub-field or item. The string will follow one of these four formats: 'f:&lt;name&gt;', where &lt;name&gt; is the name of a field in a struct, or key in a map 'v:&lt;value&gt;', where &lt;value&gt; is the exact json formatted value of a list item 'i:&lt;index&gt;', where &lt;index&gt; is position of a item in a list 'k:&lt;keys&gt;', where &lt;keys&gt; is a map of  a list item's key fields to their unique values If a key maps to an empty Fields value, the field that key represents is part of the set.\n\nThe exact format is defined in sigs.k8s.io/structured-merge-diff",
+      "description": "FieldsV1 stores a set of fields in a data structure like a Trie, in JSON format.\n\nEach key is either a '.' representing the field itself, and will always map to an empty set, or a string representing a sub-field or item. The string will follow one of these four formats: 'f:\u003cname\u003e', where \u003cname\u003e is the name of a field in a struct, or key in a map 'v:\u003cvalue\u003e', where \u003cvalue\u003e is the exact json formatted value of a list item 'i:\u003cindex\u003e', where \u003cindex\u003e is position of a item in a list 'k:\u003ckeys\u003e', where \u003ckeys\u003e is a map of  a list item's key fields to their unique values If a key maps to an empty Fields value, the field that key represents is part of the set.\n\nThe exact format is defined in sigs.k8s.io/structured-merge-diff",
       "type": "object"
     },
     "io.k8s.apimachinery.pkg.apis.meta.v1.GroupVersionForDiscovery": {
@@ -21924,7 +20906,7 @@
           }
         },
         "matchLabels": {
-          "description": "matchLabels is a map of [key,value] pairs. A single [key,value] in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed.",
+          "description": "matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed.",
           "type": "object",
           "additionalProperties": {
             "type": "string",
@@ -21963,7 +20945,7 @@
       }
     },
     "io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta": {
-      "description": "ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of [ObjectMeta, ListMeta].",
+      "description": "ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.",
       "type": "object",
       "properties": {
         "continue": {
@@ -22033,6 +21015,7 @@
         },
         "creationTimestamp": {
           "description": "CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.\n\nPopulated by the system. Read-only. Null for lists. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata",
+          "default": {},
           "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
         },
         "deletionGracePeriodSeconds": {
@@ -22309,6 +21292,7 @@
       "properties": {
         "object": {
           "description": "Object is:\n * If Type is Added or Modified: the new state of the object.\n * If Type is Deleted: the state of the object immediately before deletion.\n * If Type is Error: *Status is recommended; other types may make sense\n   depending on context.",
+          "default": {},
           "$ref": "#/definitions/io.k8s.apimachinery.pkg.runtime.RawExtension"
         },
         "type": {
@@ -22351,11 +21335,6 @@
           "group": "apps",
           "kind": "WatchEvent",
           "version": "v1beta2"
-        },
-        {
-          "group": "apps.karmada.io",
-          "kind": "WatchEvent",
-          "version": "v1alpha1"
         },
         {
           "group": "authentication.k8s.io",
@@ -22485,7 +21464,7 @@
         {
           "group": "flowcontrol.apiserver.k8s.io",
           "kind": "WatchEvent",
-          "version": "v1"
+          "version": "v1alpha1"
         },
         {
           "group": "flowcontrol.apiserver.k8s.io",
@@ -22635,7 +21614,7 @@
       ]
     },
     "io.k8s.apimachinery.pkg.runtime.RawExtension": {
-      "description": "RawExtension is used to hold extensions in external versions.\n\nTo use this, make a field which has RawExtension as its type in your external, versioned struct, and Object in your internal struct. You also need to register your various plugin types.\n\n// Internal package:\n\n\ttype MyAPIObject struct [\n\t\truntime.TypeMeta `json:\",inline\"`\n\t\tMyPlugin runtime.Object `json:\"myPlugin\"`\n\t]\n\n\ttype PluginA struct [\n\t\tAOption string `json:\"aOption\"`\n\t]\n\n// External package:\n\n\ttype MyAPIObject struct [\n\t\truntime.TypeMeta `json:\",inline\"`\n\t\tMyPlugin runtime.RawExtension `json:\"myPlugin\"`\n\t]\n\n\ttype PluginA struct [\n\t\tAOption string `json:\"aOption\"`\n\t]\n\n// On the wire, the JSON will look something like this:\n\n\t[\n\t\t\"kind\":\"MyAPIObject\",\n\t\t\"apiVersion\":\"v1\",\n\t\t\"myPlugin\": [\n\t\t\t\"kind\":\"PluginA\",\n\t\t\t\"aOption\":\"foo\",\n\t\t],\n\t]\n\nSo what happens? Decode first uses json or yaml to unmarshal the serialized data into your external MyAPIObject. That causes the raw JSON to be stored, but not unpacked. The next step is to copy (using pkg/conversion) into the internal struct. The runtime package's DefaultScheme has conversion functions installed which will unpack the JSON stored in RawExtension, turning it into the correct object type, and storing it in the Object. (TODO: In the case where the object is of an unknown type, a runtime.Unknown object will be created and stored.)",
+      "description": "RawExtension is used to hold extensions in external versions.\n\nTo use this, make a field which has RawExtension as its type in your external, versioned struct, and Object in your internal struct. You also need to register your various plugin types.\n\n// Internal package:\n\n\ttype MyAPIObject struct {\n\t\truntime.TypeMeta `json:\",inline\"`\n\t\tMyPlugin runtime.Object `json:\"myPlugin\"`\n\t}\n\n\ttype PluginA struct {\n\t\tAOption string `json:\"aOption\"`\n\t}\n\n// External package:\n\n\ttype MyAPIObject struct {\n\t\truntime.TypeMeta `json:\",inline\"`\n\t\tMyPlugin runtime.RawExtension `json:\"myPlugin\"`\n\t}\n\n\ttype PluginA struct {\n\t\tAOption string `json:\"aOption\"`\n\t}\n\n// On the wire, the JSON will look something like this:\n\n\t{\n\t\t\"kind\":\"MyAPIObject\",\n\t\t\"apiVersion\":\"v1\",\n\t\t\"myPlugin\": {\n\t\t\t\"kind\":\"PluginA\",\n\t\t\t\"aOption\":\"foo\",\n\t\t},\n\t}\n\nSo what happens? Decode first uses json or yaml to unmarshal the serialized data into your external MyAPIObject. That causes the raw JSON to be stored, but not unpacked. The next step is to copy (using pkg/conversion) into the internal struct. The runtime package's DefaultScheme has conversion functions installed which will unpack the JSON stored in RawExtension, turning it into the correct object type, and storing it in the Object. (TODO: In the case where the object is of an unknown type, a runtime.Unknown object will be created and stored.)",
       "type": "object"
     }
   },
@@ -22747,10 +21726,10 @@
       "in": "path",
       "required": true
     },
-    "pretty-tJGM1-ng": {
+    "pretty-nN7o5FEq": {
       "uniqueItems": true,
       "type": "string",
-      "description": "If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget).",
+      "description": "If 'true', then the output is pretty printed.",
       "name": "pretty",
       "in": "query"
     },
