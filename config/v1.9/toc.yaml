@@ -14,11 +14,6 @@
 # limitations under the License.
 
 parts:
-  - name: App Resources
-    chapters:
-      - name: WorkloadRebalancer
-        group: "apps.karmada.io"
-        version: v1alpha1
   - name: AutoScaling Resources
     chapters:
       - name: FederatedHPA
