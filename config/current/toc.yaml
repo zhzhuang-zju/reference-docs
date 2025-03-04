@@ -111,3 +111,4 @@ skippedResources:
   - APIGroupList
   - APIResourceList
   - APIVersions
+  - Status
